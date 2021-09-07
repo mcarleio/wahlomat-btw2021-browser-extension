@@ -1,0 +1,30 @@
+{
+  "name": "Koalitionen - Wahl-O-Mat Bundestagswahl 2021",
+  "description": "Erweitert den Wahl-O-Mat für die Bundestagswahl 2021 um mögliche Koalitionen!",
+  "version": "1.0",
+  "manifest_version": 3,
+  "icons": {
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.wahl-o-mat.de/bundestagswahl2021/app/*"
+      ],
+      "js": [
+        "content-script.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "script.js"
+      ],
+      "matches": [
+        "https://www.wahl-o-mat.de/*"
+      ]
+    }
+  ]
+}
