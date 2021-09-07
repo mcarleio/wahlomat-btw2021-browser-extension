@@ -267,6 +267,7 @@ function start() {
         }
 
 
+        const prevThesen = S_aThesen;
         S_aThesen = transpose(WOMT_aThesenParteien)[koalitionPartyIndex];
 
         for (let i = 0; i < koalition.parties.length; i++) {
@@ -295,6 +296,8 @@ function start() {
             </span>
         </div>`;
 
+        // Wiederherstellen der ursprünglichen Antworten
+        S_aThesen = prevThesen;
     }
 
     /*
