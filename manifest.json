@@ -1,0 +1,18 @@
+{
+  "name": "Wahl-o-mat Bundestagswahl Koalitionen",
+  "description": "Fügt mögliche Koalitionen den Auswertung hinzu",
+  "version": "1.0",
+  "manifest_version": 3,
+  "content_scripts": [
+	{
+	 "matches": ["https://www.wahl-o-mat.de/bundestagswahl2021/app/*"],
+	 "js": ["content-script.js"]
+	}
+  ],
+  "web_accessible_resources": [
+	{
+	  "resources": ["script.js"],
+	  "matches": ["https://www.wahl-o-mat.de/*"]
+	}
+  ]
+}
