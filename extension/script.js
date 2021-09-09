@@ -175,6 +175,37 @@ wom_switch_page = (a, b, c, d, e, f) => {
         .forEach(panel => panel.parentNode.id = panel.id.replace('-panel-', '-li-')); // => li#results-li-${partyId}
 }
 
+/*
+ * Verschiebt die Koalitionen in der Parteiauswahl in eine eigene Gruppe
+ */
+if (!window.original_write_3_parteiauswahl) {
+    window.original_write_3_parteiauswahl = write_3_parteiauswahl;
+}
+
+write_3_parteiauswahl = (a, b, c, d, e, f) => {
+    const result = original_write_3_parteiauswahl(a, b, c, d, e, f);
+    const tmpBody = document.createElement('body')
+    tmpBody.innerHTML = result;
+
+    const newContainer = document.createElement('div');
+    newContainer.classList += 'party-selection__container';
+    newContainer.innerHTML = `<fieldset>
+        <legend class="party-selection__note party-selection__note--right" aria-describedby="explanation">Koalitionen:</legend>
+        <ul id="party-selection__list--koalition" class="party-selection__list"></ul></fieldset>`;
+
+    tmpBody.querySelector('.party-selection').insertBefore(newContainer, tmpBody.querySelectorAll('.party-selection__container')[1]);
+
+    for (let index = 0; index < koalitionen.length; index++) {
+        const koalitionPartyIndex = findPartyIndexByName(koalitionen[index].name)
+
+        const li = tmpBody.querySelector(`#wom-party-item-${koalitionPartyIndex + 1}`);
+        newContainer.getElementsByClassName('party-selection__list')[0].appendChild(li);
+    }
+
+    return tmpBody.innerHTML;
+}
+
+
 
 function start() {
 
@@ -313,6 +344,10 @@ function start() {
 			color: white;
 			text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #111111, 2px 1px 1px #cccccc, 1px 2px 1px #111111, 3px 2px 1px #cccccc, 2px 3px 1px #111111;
 		}
+
+        #formparteiauswahl .party-selection .party-selection__image {
+            filter: opacity(33%);
+        }
 	`;
     document.head.appendChild(customStyle);
 
