@@ -26,6 +26,9 @@ Zusätzlich kann je Koalition eingesehen werden, wie die Aussagen der beteiligte
 * Begründung der Koalition mit allen beteiligten Parteien und deren Begründungen
   ![screenshot3]
 
+* Auswahl der Parteien mit hervorgehobenen Koalitionen
+  ![screenshot4]
+
 ## Props
 
 * Wahlomat: https://www.wahl-o-mat.de/
@@ -41,3 +44,4 @@ Zusätzlich kann je Koalition eingesehen werden, wie die Aussagen der beteiligte
 [screenshot1]: images/screenshot_1.png
 [screenshot2]: images/screenshot_2.png
 [screenshot3]: images/screenshot_3.png
+[screenshot4]: images/screenshot_4.png
