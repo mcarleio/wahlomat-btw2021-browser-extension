@@ -45,16 +45,16 @@ const koalitionen = [
 /*
  * Umfragedaten
  */
-const seatsDataFrom = "https://dawum.de/Bundestag/";
-const seatsDataDate = "16.09.2021";
+const seatsDataFrom = "https://www.bundeswahlleiter.de/bundestagswahlen/2021/ergebnisse/bund-99.html";
+const seatsDataDate = "16.02.2022";
 
-const seatCount = 598
+const seatCount = 736
 const seatDistribution = {
-    "CDU / CSU": 139,
-    "SPD": 167,
-    "GRÜNE": 104,
-    "FDP": 75,
-    "DIE LINKE": 41,
+    "CDU / CSU": 197,
+    "SPD": 206,
+    "GRÜNE": 118,
+    "FDP": 92,
+    "DIE LINKE": 39,
 }
 
 const colorMap = {
